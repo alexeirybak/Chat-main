@@ -2,6 +2,18 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/styles.css":
+/*!************************!*\
+  !*** ./src/styles.css ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/api.ts":
 /*!********************!*\
   !*** ./src/api.ts ***!
@@ -351,9 +363,8 @@ function renderLogin(_a) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-var __webpack_exports__ = {};
 /*!***********************!*\
   !*** ./src/script.ts ***!
   \***********************/
@@ -361,8 +372,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getComments: () => (/* binding */ getComments)
 /* harmony export */ });
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ "./src/api.ts");
-/* harmony import */ var _components_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/login-component */ "./src/components/login-component.ts");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./api */ "./src/api.ts");
+/* harmony import */ var _components_login_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/login-component */ "./src/components/login-component.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -401,7 +413,8 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 };
 
 
-var token = '';
+
+var token = "";
 var comments = [];
 var initialLoading = true;
 var isLoadingAdd = false;
@@ -414,7 +427,7 @@ var getComments = function () { return __awaiter(void 0, void 0, void 0, functio
                 loaderElement.innerHTML = "<div class=\"preloader\">\n  <div class=\"preloader-image\">\u041F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0437\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u0442\u0441\u044F</div></div>";
             }
         }
-        return [2 /*return*/, (0,_api__WEBPACK_IMPORTED_MODULE_0__.getApiComments)({ token: token }).then(function (responseData) {
+        return [2 /*return*/, (0,_api__WEBPACK_IMPORTED_MODULE_1__.getApiComments)({ token: token }).then(function (responseData) {
                 var appComments = responseData.comments.map(function (comment) {
                     return {
                         date: new Date(comment.date),
@@ -466,7 +479,7 @@ var renderComments = function () {
         if (loginButton) {
             loginButton.addEventListener('click', function () {
                 if (appEl) {
-                    (0,_components_login_component__WEBPACK_IMPORTED_MODULE_1__.renderLogin)({
+                    (0,_components_login_component__WEBPACK_IMPORTED_MODULE_2__.renderLogin)({
                         appEl: appEl,
                         setToken: function (newToken) {
                             token = newToken;
@@ -478,13 +491,13 @@ var renderComments = function () {
         }
         return;
     }
-    var appHtml = "<ul class=\"comments\">\n                ".concat(commentHTML, "\n                </ul>\n                <div class=\"add-form-row\">\n                </div>\n                <div class=\"add-form\" id=\"add-comment\">\n                  <input\n                    type=\"text\"\n                    class=\"add-form-name\"\n                    placeholder=\"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F\"\n                    disabled\n                    value=\"").concat(_components_login_component__WEBPACK_IMPORTED_MODULE_1__.userName, "\"\n                    id=\"name-input\"\n                    disabled/>\n                  <textarea\n                    type=\"textarea\"\n                    class=\"add-form-text\"\n                    placeholder=\"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0430\u0448 \u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439\"\n                    rows=\"4\"\n                    id=\"text-input\"\n                  ></textarea>\n                  <div class=\"add-form-row\">\n                    <button class=\"add-form-button\" id=\"button-add\">\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C</button>\n                  </div>\n                </div>\n                <div class=\"preloader\">\n                  <div id=\"form-loading\" class=\"hidden\">\u041A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439 \u0437\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u0442\u0441\u044F</div>\n                </div>");
+    var appHtml = "<ul class=\"comments\">\n                ".concat(commentHTML, "\n                </ul>\n                <div class=\"add-form-row\">\n                </div>\n                <div class=\"add-form\" id=\"add-comment\">\n                  <input\n                    type=\"text\"\n                    class=\"add-form-name\"\n                    placeholder=\"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F\"\n                    disabled\n                    value=\"").concat(_components_login_component__WEBPACK_IMPORTED_MODULE_2__.userName, "\"\n                    id=\"name-input\"\n                    disabled/>\n                  <textarea\n                    type=\"textarea\"\n                    class=\"add-form-text\"\n                    placeholder=\"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0430\u0448 \u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439\"\n                    rows=\"4\"\n                    id=\"text-input\"\n                  ></textarea>\n                  <div class=\"add-form-row\">\n                    <button class=\"add-form-button\" id=\"button-add\">\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C</button>\n                  </div>\n                </div>\n                <div class=\"preloader\">\n                  <div id=\"form-loading\" class=\"hidden\">\u041A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439 \u0437\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u0442\u0441\u044F</div>\n                </div>");
     if (appEl) {
         appEl.innerHTML = appHtml;
     }
-    var nameInputElement = document.querySelector('#nameInput');
-    var textInputElement = document.querySelector('#textInput');
-    var buttonElement = document.querySelector('#submitButton');
+    var nameInputElement = document.getElementById('name-input');
+    var textInputElement = document.getElementById('text-input');
+    var buttonElement = document.getElementById('button-add');
     if (buttonElement) {
         buttonElement.classList.add('empty');
         buttonElement.disabled = true;
@@ -513,7 +526,7 @@ var renderComments = function () {
             var index = deleteButtonElement.dataset.id;
             if (index) {
                 var commentIndex = Number(index);
-                (0,_api__WEBPACK_IMPORTED_MODULE_0__.deleteApiComments)(comments[commentIndex].id, token).then(function () {
+                (0,_api__WEBPACK_IMPORTED_MODULE_1__.deleteApiComments)(comments[commentIndex].id, token).then(function () {
                     return getComments();
                 });
             }
@@ -523,7 +536,7 @@ var renderComments = function () {
         isLoadingAdd = true;
         renderForm(isLoadingAdd);
         if (textInputElement) {
-            (0,_api__WEBPACK_IMPORTED_MODULE_0__.addApiComments)({
+            (0,_api__WEBPACK_IMPORTED_MODULE_1__.addApiComments)({
                 text: sanitizeHtml(textInputElement.value),
                 token: token,
             })
@@ -591,10 +604,10 @@ var renderComments = function () {
                 else {
                     var redactCommentElement = document.querySelectorAll('.edit-comment');
                     comments[index].text = redactCommentElement[0].value;
-                    (0,_api__WEBPACK_IMPORTED_MODULE_0__.deleteApiComments)(comments[index].id, token).then(function () {
+                    (0,_api__WEBPACK_IMPORTED_MODULE_1__.deleteApiComments)(comments[index].id, token).then(function () {
                         getComments();
                     });
-                    (0,_api__WEBPACK_IMPORTED_MODULE_0__.answerApiComments)({
+                    (0,_api__WEBPACK_IMPORTED_MODULE_1__.answerApiComments)({
                         text: sanitizeHtml(comments[index].text),
                         token: token,
                     })
@@ -617,7 +630,7 @@ function counterLikes() {
             event.stopPropagation();
             var index = parseInt((_a = likesButtonElement.dataset.index) !== null && _a !== void 0 ? _a : '');
             var commentId = comments[index].id;
-            (0,_api__WEBPACK_IMPORTED_MODULE_0__.addLike)(token, commentId).then(function () {
+            (0,_api__WEBPACK_IMPORTED_MODULE_1__.addLike)(token, commentId).then(function () {
                 return getComments();
             });
         });
@@ -640,16 +653,6 @@ var renderForm = function (isLoading) {
 
 })();
 
-// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
-(() => {
-/*!************************!*\
-  !*** ./src/styles.css ***!
-  \************************/
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-})();
-
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=index.js.map

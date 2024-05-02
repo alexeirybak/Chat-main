@@ -1,3 +1,5 @@
+import './styles.css';
+
 import {
     addApiComments,
     getApiComments,
@@ -7,7 +9,7 @@ import {
 } from './api';
 import { renderLogin, userName } from './components/login-component';
 
-let token: string = '';
+let token: string = ``;
 let comments: Comment[] = [];
 let initialLoading = true;
 let isLoadingAdd = false;
@@ -159,15 +161,19 @@ const renderComments = () => {
         appEl.innerHTML = appHtml;
     }
 
-    const nameInputElement: HTMLInputElement | null =
-        document.querySelector('#nameInput');
-    const textInputElement: HTMLInputElement | null =
-        document.querySelector('#textInput');
-    const buttonElement: HTMLButtonElement | null =
-        document.querySelector('#submitButton');
+    const nameInputElement: HTMLInputElement | null = document.getElementById(
+        'name-input',
+    ) as HTMLInputElement;
+    const textInputElement: HTMLInputElement | null = document.getElementById(
+        'text-input',
+    ) as HTMLInputElement;
+    const buttonElement: HTMLButtonElement | null = document.getElementById(
+        'button-add',
+    ) as HTMLButtonElement;
+
     if (buttonElement) {
         buttonElement.classList.add('empty');
-        (buttonElement as HTMLButtonElement).disabled = true;
+        buttonElement.disabled = true;
     }
 
     const loadingElement = document.getElementById('form-loading');

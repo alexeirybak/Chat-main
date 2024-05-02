@@ -5,9 +5,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    entry: {
-        main: ['./src/script.ts', './src/styles.css'],
-    },
+    entry: './src/script.ts',
     mode: isProduction ? 'production' : 'development',
     module: {
         rules: [
@@ -17,6 +15,10 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+            {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
@@ -24,33 +26,26 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
             },
-            {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
-            },
         ],
     },
     resolve: {
         extensions: ['.js', '.ts', '.css'],
     },
-    devtool:
-        process.env.NODE_ENV === 'production'
-            ? 'hidden-source-map'
-            : 'source-map',
     output: {
-        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
+        filename: './index.js',
     },
-
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
         }),
-        new MiniCssExtractPlugin({
-            filename: 'styles.css',
-        }),
+        new MiniCssExtractPlugin(),
     ],
     optimization: {
         minimizer: ['...', new CssMinimizerPlugin()],
     },
+    devtool:
+        process.env.NODE_ENV === 'production'
+            ? 'hidden-source-map'
+            : 'source-map',
 };
